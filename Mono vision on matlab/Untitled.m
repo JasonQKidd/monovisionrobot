@@ -1,0 +1,9 @@
+ a=[99.9,60.2,1.2];
+try
+port1=serial('com1');
+port1.BaudRate=9600;
+fopen(port1);
+dataToSend=dec2hex(a);
+fwrite(port1,hex2dec(dataToSend));
+fclose(port1);
+end
